@@ -76,5 +76,6 @@ if args.poll:
     bot.remove_webhook()
     bot.polling()
 else:
-    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+    # webhook should be set first
     webhook()
+    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
